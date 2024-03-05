@@ -1,0 +1,16 @@
+<!--  -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3 text-center mt-0 container-fluid "> <!-- Ajuste en el margen superior -->
+            <h1 class="display-4 mt-5">Bienvenido a mi proyecto de Angular.</h1>
+            <p class="lead mb-4 small">Primer párrafo.</p> <!-- Cambio en la clase para reducir el tamaño de la letra -->
+            <p class="mb-4">Segundo párrafo.</p>
+            <!-- Nueva información adicional -->
+            <i class="fab fa-font-awesome-flag fa-3x mt-3"></i>
+            <div class="visit-counter mt-4">
+                <p>¡Has visitado esta página {{ visitCount }} veces!</p>
+                <button (click)="incrementVisitCount()" class="btn btn-primary">Aumenta</button>
+            </div>
+        </div>
+    </div>
+</div>
