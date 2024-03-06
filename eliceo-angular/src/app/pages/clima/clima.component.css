@@ -5,16 +5,27 @@
     text-align: center;
     background-color: #a0d3ff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-flow: column;
   }
   
+  * {
+    border-radius: 15px;
+    border: 0px;
+  }
+
   h1 {
     color: #333333;
+    margin-bottom: 1em;
   }
   
   input[type="text"] {
     padding: 10px;
     font-size: 16px;
     width: 70%;
+    margin-bottom: 2em;
   }
   
   button {
@@ -24,6 +35,7 @@
     color: #ffffff;
     border: none;
     cursor: pointer;
+    margin-bottom: 1em;
   }
   
   #datosClima {

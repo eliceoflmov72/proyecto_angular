@@ -1,9 +1,27 @@
 :host {
-    display: block;
-    grid-area: header;
-    width: auto;
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Establece un valor alto para asegurarte de que esté por encima */
+  display: block;
+  grid-area: header;
+  position: sticky;
+  top: 0;
+}
+
+
+div a img {
+  transition: none; /* Eliminamos la transición */
+}
+
+div a img:hover {
+  animation: agrandar-rotar 0.5s linear;
+}
+
+@keyframes agrandar-rotar {
+  0% {
+    transform: scale(1) rotate(0deg); /* Tamaño original, sin rotación */
   }
-  
+  50% {
+    transform: scale(1.2) rotate(180deg); /* Agrandar al 120% y rotar 180 grados */
+  }
+  100% {
+    transform: scale(1) rotate(360deg); /* Volver al tamaño original y rotar 360 grados */
+  }
+}

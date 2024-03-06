@@ -1,8 +1,15 @@
 :host {
     padding-top: auto;
     margin: 0;
+
   }
   
+ div div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+  }
   h1 {
     color: #007bff; /* Azul Bootstrap */
   }
@@ -12,8 +19,13 @@
   }
   
   .visit-counter {
-    background-color: #ffc107; /* Amarillo Bootstrap */
-    border: 2px solid #007bff; /* Borde azul */
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    background-color: #d26060; /* Amarillo Bootstrap */
+    border: 2px solid #992c2c; /* Borde azul */
     border-radius: 10px; /* Bordes redondeados */
     padding: 10px; /* Espaciado interno */
     font-size: 18px; /* Tamaño de fuente */

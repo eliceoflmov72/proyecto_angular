@@ -6,15 +6,17 @@
       "header header"
       "sidebar content"
       "footer footer";
-  
-    grid-template-columns: 250px 1fr;
     
+    grid-template-columns: 250px 1fr;
   }
+
+
   
   .content {
       display: block;
       grid-area: content;
   }
+
   /* Media query en CSS */
   @media (width <= 768px) {
     /* Estilos para cuando el ancho de la ventana es máximo 768px */

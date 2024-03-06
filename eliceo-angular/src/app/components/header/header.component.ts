@@ -1,6 +1,4 @@
-import { Component } from '@angular/core';
-
-// Se importa esto para poder hacer referencia al home
+import { Component, NgModule } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
