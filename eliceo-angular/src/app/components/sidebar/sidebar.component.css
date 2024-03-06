@@ -34,7 +34,7 @@
     .nga-btn-toggle[aria-expanded="true"]::before {
       transform: rotate(90deg);
     }
-    
+
     .nga-btn-toggle-nav a {
       display: inline-flex;
       padding: .1875rem .5rem;
@@ -66,7 +66,7 @@
     
     .nga-container-sidebar {
       overflow: auto;
-      font-weight: 600
+      font-weight: 600;
     }
     
     @media (min-width: 768px) {
@@ -78,7 +78,7 @@
         height: calc(100vh - 7rem);
         padding-left: .25rem;
         margin-left: -.25rem;
-        overflow-y: auto
+        overflow-y: auto;
       }
     }
   
