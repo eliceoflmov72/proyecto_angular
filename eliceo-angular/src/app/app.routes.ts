@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { ClimaComponent } from './pages/clima/clima.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
+import { NasaComponent } from './pages/nasa/nasa.component';
 
 export const routes: Routes = [
 
@@ -9,7 +10,7 @@ export const routes: Routes = [
     {path: '', component:HomeComponent, title:'Inicio' },
     {path:'clima', component:ClimaComponent, title:'API Clima' },
     {path:'peliculas', component:PeliculasComponent, title: 'API Peliculas' },
-
-    {path: '**',redirectTo: '',pathMatch:'full' },
+    {path: 'nasa', component:NasaComponent, title: 'API Nasa' },
+    {path: '**',redirectTo: '',pathMatch:'full' }
 
 ];
