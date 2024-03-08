@@ -11,6 +11,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
+import { FormsModule } from '@angular/forms';
+
+
 // El decorador 'Component' toma como objeto un argumento
 @Component({
   selector: 'app-root',
@@ -22,6 +25,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     SidebarComponent,
     RouterOutlet,
     FooterComponent,
+    FormsModule
    
   ],
   templateUrl: './app.component.html',
@@ -32,4 +36,3 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 export class AppComponent {
   title = 'grid-proyect';
 }
-
