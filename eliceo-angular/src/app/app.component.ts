@@ -20,13 +20,11 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: 
   [
-    
     HeaderComponent,
     SidebarComponent,
     RouterOutlet,
     FooterComponent,
     FormsModule
-   
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

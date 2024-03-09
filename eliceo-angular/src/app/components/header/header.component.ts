@@ -9,8 +9,7 @@ import { ComponentSearchService } from '../../services/buscador.service';
 
 import { FormsModule } from '@angular/forms';
 
-// Importamos Observable y Subject para que cuando busquemos entre los componentes el observable se actualice cuando cambie el searchTerm
-import { Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-header',

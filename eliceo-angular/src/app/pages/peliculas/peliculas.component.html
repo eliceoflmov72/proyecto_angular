@@ -7,7 +7,7 @@
       <p>No se encontraron resultados para tu búsqueda.</p>
     </div>
   }
-  @if (peliculas.length > 0) {
+  @if (busquedaInput !== '') {
     <div>
       @for (movie of peliculas; track movie) {
         <div class="movie">
