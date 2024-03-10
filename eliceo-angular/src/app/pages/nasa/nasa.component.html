@@ -1,0 +1,8 @@
+@if (imagenAstronomica) {
+  <div>
+    <h1>{{ imagenAstronomica.title }}</h1>
+    <img [src]="imagenAstronomica.url" alt="{{ imagenAstronomica.title }}" />
+    <p>{{ imagenAstronomica.explanation }}</p>
+    <p>{{ imagenAstronomica.date }}</p>
+  </div>
+}

@@ -25,3 +25,8 @@ div a img:hover {
     transform: scale(1) rotate(360deg); /* Volver al tamaño original y rotar 360 grados */
   }
 }
+
+
+li {
+  color: white;
+}
