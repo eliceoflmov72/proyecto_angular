@@ -2,6 +2,7 @@
     margin: 0;
     gap: 1rem;
     display: grid;
+    color: white;
     grid-template-areas:
       "header header"
       "sidebar content"
