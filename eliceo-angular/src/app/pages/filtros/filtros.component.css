@@ -1,0 +1,37 @@
+.container {
+    width: 500px;
+    margin: 20px auto;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .filtros {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  img {
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 10px auto;
+  }
+  img {
+    filter: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="filtro-base64"><feImage x="0" y="0" width="100%" height="100%" href="{imagenBase}"/></filter></svg>');
+  }
+

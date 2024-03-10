@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Filtros de imágenes</h1>
+  <input type="file" (change)="cuandoCambiarArchivo($event)">
+  <img id="imagen" [src]="imagenBase" [style.filter]="filtroSeleccionado">
+
+  <div class="filtros">
+    <select [(ngModel)]="filtroSeleccionado">
+      @for (filtro of filtrosDisponibles; track filtro) {
+        <option [value]="filtro.valor">{{ filtro.nombre }}</option>
+      }
+    </select>
+    <button (click)="aplicarFiltro()">Aplicar filtro</button>
+  </div>
+</div>
