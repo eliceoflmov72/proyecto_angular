@@ -7,19 +7,26 @@ import { githubComponent } from './pages/github/github.component';
 import { AdivinanzaComponent } from './pages/adivinanza/adivinanza.component';
 import { FiltrosComponent } from './pages/filtros/filtros.component';
 import { WindowMethodsComponent } from './pages/window-methods/window-methods.component';
+import { AddTutorialComponent } from './pages/add-tutorial/add-tutorial.component';
+import { TutorialDetailsComponent } from './pages/tutorial-details/tutorial-details.component';
+import { TutorialsListComponent } from './pages/tutorials-list/tutorials-list.component';
 
 export const routes: Routes = [
 
     // Cambiamos el router component por el home component
     {path: '', component:HomeComponent},
-    {path:'adivinanza', component:AdivinanzaComponent, title: 'Adivina el número'},
-    {path:'filtros', component:FiltrosComponent, title: 'Filtros de imágenes'},
-    {path:'window-methods', component:WindowMethodsComponent, title: 'Window Methods'},
+    {path: 'adivinanza', component:AdivinanzaComponent, title: 'Adivina el número'},
+    {path: 'filtros', component:FiltrosComponent, title: 'Filtros de imágenes'},
+    {path: 'window-methods', component:WindowMethodsComponent, title: 'Window Methods'},
     {path: '', component:HomeComponent, title:'Inicio' },
-    {path:'clima', component:ClimaComponent, title:'API Clima' },
-    {path:'peliculas', component:PeliculasComponent, title: 'API Peliculas' },
+    {path: 'clima', component:ClimaComponent, title:'API Clima' },
+    {path: 'peliculas', component:PeliculasComponent, title: 'API Peliculas' },
     {path: 'nasa', component:NasaComponent, title: 'API Nasa' },
     {path: 'github', component:githubComponent, title: 'API GitHub' },
+
+    {path: 'add-tutorial', component:AddTutorialComponent, title: 'Añadir nota' },
+    {path: 'tutorials/:id', component:TutorialDetailsComponent, title: 'Detalles' },
+    {path: 'tutorials', component:TutorialsListComponent, title: 'Listado' },
     {path: '**',redirectTo: '',pathMatch:'full' }
 
 ];
