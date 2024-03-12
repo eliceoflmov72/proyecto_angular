@@ -1,0 +1,96 @@
+:host {
+    display: block;
+    text-align: center;
+}
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 3em;
+}
+
+h1 {
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    animation: aparecer 1s ease-out;
+    color: #6acad9 !important;
+    text-shadow: 0 0 40px #6acad9;
+    
+  }
+  
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+input {
+    margin-bottom: 2em;
+    border: 0;
+    font-size: 1.2em;
+    width: 35%;
+    height: 2em;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgb(227, 227, 227);
+    transition: 1s;
+    color: black !important;
+    outline: 4px solid #61c7d6 !important;
+}
+
+select {
+    margin-bottom: 2em;
+    border: 0;
+    font-size: 1.2em;
+    width: 100%;
+    height: 2em;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgb(227, 227, 227);
+    transition: 1s;
+}
+
+select:active, select:focus {
+    outline: 4px solid #61c7d6 !important;
+}
+
+input:active, input:focus {
+    outline: 4px solid #61c7d6 !important;
+    font-size: 1.2em;
+    width: 30%;
+    height: 2em;
+    text-align: center;
+    border-radius: 4px;
+    background-color: white;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    transition: 0.08s;
+    width: 8em;
+    height: 2em;
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    border-radius: 4px;
+    background-color: #4A8891;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: #6acad9;
+}
+
+img {
+    width: 50%;
+    margin-bottom: 2em;
+    margin-top: 1em;
+    border-radius: 6px;
+}

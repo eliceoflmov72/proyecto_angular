@@ -183,7 +183,12 @@ nav{
       height: 80%;
   }
 }
-
+button:hover {
+  transform: scale(1.1);
+  background-color: #a1e0ea;
+  outline: 1px solid #d3eaed !important;
+  box-shadow: 0 0 4px #49c9dc, 0 0 10px #42c8dc;
+}
 @keyframes brand {
   from {
       transform: scale(1); /* Start at normal size */

@@ -1,24 +1,22 @@
 <!-- app.component.html -->
 <div class="container">
-<h1>GitHub User Information</h1>
-<div>
-    <label for="nombre_usuario">Enter GitHub Username:</label>
-    <input type="text" id="nombre_usuario" required [(ngModel)]="nombre_usuario">
-    <button (click)="obtenerInformacionUsuario()">Get User Info</button>
-</div>
+    <h1>Buscador de usuarios GitHub</h1>
+    <input type="text" id="nombre_usuario" required [(ngModel)]="nombre_usuario" placeholder="Introduce el un nombre de usuario.">
+    <button (click)="obtenerInformacionUsuario()">Buscar</button>
 
-@if (userData) {
-<div id="result">
-    <h2>GitHub User Information</h2>
-    <img [src]="userData.avatar_url" alt="Avatar">
-    <h2>{{ userData.name }}</h2>
-    <p>Nombre de usuario: {{ userData.login }}</p>
-    <p>Repositorios públicos: {{ userData.public_repos }}</p>
-    <p>Seguidores: {{ userData.followers }}</p>
-    <p>Seguidos: {{ userData.following }}</p>
-    <p>Fecha de creación: {{ userData.created_at }}</p>
-    <p>Última actualización: {{ userData.updated_at }}</p>
-    <button (click)="copiarPortapapeles()">Copiar al portapapeles.</button>
-</div>
-}
+
+    @if (userData) {
+    <div id="result">
+        <h2>GitHub User Information</h2>
+        <img [src]="userData.avatar_url" alt="Avatar">
+        <h2>{{ userData.name }}</h2>
+        <p>Nombre de usuario: {{ userData.login }}</p>
+        <p>Repositorios públicos: {{ userData.public_repos }}</p>
+        <p>Seguidores: {{ userData.followers }}</p>
+        <p>Seguidos: {{ userData.following }}</p>
+        <p>Fecha de creación: {{ userData.created_at }}</p>
+        <p>Última actualización: {{ userData.updated_at }}</p>
+        <button (click)="copiarPortapapeles()">Copiar información</button>
+    </div>
+    }
 </div>
