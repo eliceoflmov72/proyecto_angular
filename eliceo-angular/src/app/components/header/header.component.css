@@ -34,23 +34,21 @@ div a img:hover {
 }
 
 nav {
-  backdrop-filter: invert(32%);
+  backdrop-filter: invert(40%);
   transition: 1s;
+  font-size: 1.2em;
 }
 
+#navbarSupportedContent ul li {
+  display: flex;
+  margin-right: 10%;
+}
 
 .navbar-nav {
   font-weight: bold;
-  font-size: 1.2em;
+
   width: 100%;
 }
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 30%;
-}
-
 
 .collapse li, .collapse #buscador{
   display: flex;
@@ -68,8 +66,7 @@ nav {
 
 .search-bar ul {
   position:absolute;
-  top: 65%;
-  backdrop-filter: invert(32%);
+  top: 79%;
   background-color: #FFFFFF;
   text-decoration: none;
   display: flex;
@@ -159,5 +156,54 @@ button:active {
   text-decoration: underline;
   text-decoration-color: #63ddf0;
   text-decoration-thickness: 4px;
-  
 }
+
+nav{
+  top: 0;
+  animation: headerEstatico linear both;
+  animation-timeline: scroll(root);
+  /* No ponemos block porque es por defecto*/
+  animation-range: 0 100px;
+}
+
+.navbar-brand, #buscador {
+  animation: brand linear both;
+  animation-timeline: scroll(root);
+  /* No ponemos block porque es por defecto*/
+  animation-range: 0 100px;
+}
+
+@keyframes headerEstatico {
+  to {
+      background-color: rgba(255, 255, 255, .8);
+      backdrop-filter: blur(5px);
+      font-size: 1em;
+      color: black;
+      font-size: 1em;
+      height: 80%;
+  }
+}
+
+@keyframes brand {
+  from {
+      transform: scale(1); /* Start at normal size */
+  }
+  to {
+      transform: scale(0.9);
+  }
+}
+
+@media (max-width: 992px) {
+  .search-bar ul {
+    border-radius: 15px;
+    position:absolute;
+    top: 100%;
+    backdrop-filter: invert(32%);
+    background-color: #FFFFFF;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+

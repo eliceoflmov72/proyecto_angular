@@ -3,7 +3,7 @@
     @if (!submitted) {
       <div>
         <div class="form-group">
-          <label for="title">Title</label>
+          <label for="title">Título:</label>
           <input
             type="text"
             class="form-control"
@@ -11,17 +11,17 @@
             required
             [(ngModel)]="tutorial.title"
             name="title"
-            />
+            placeholder="Introduce un título."/>
           </div>
           <div class="form-group">
-            <label for="description">Description</label>
+            <label for="description">Descripción</label>
             <input
               class="form-control"
               id="description"
               required
               [(ngModel)]="tutorial.description"
               name="description"
-              />
+              placeholder="Introduce una descripción."/>
             </div>
             <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
           </div>
