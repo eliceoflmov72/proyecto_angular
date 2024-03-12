@@ -25,20 +25,35 @@ export class HeaderComponent {
   searchTerm: string = '';
   componentesFiltrados: string[] = [];
 
-  constructor(private componentSearchService: ComponentSearchService) {}
+  constructor(private componentSearchService: ComponentSearchService) { }
 
-  search(): void { 
+  search(): void {
     const searchSubject = new Subject<string>();
-    
+
     // Se subscribe para que cuando cambie el searchTerm se actualice el observable
     searchSubject.subscribe((searchTerm) => {
       this.componentesFiltrados = this.componentSearchService.obtenerComponentesFiltrados(
         searchTerm
       );
     });
-  
+
     searchSubject.next(this.searchTerm);
   }
+
+  borrarContenidoInput(): void {
+    const miInput = document.getElementById('miInput') as HTMLInputElement;
+    if (miInput) {
+      miInput.value = '';
+    }
+    
+  }
+
+  listaVisible = true; // Valor inicial para mostrar la lista
+
+  aparecerLista():void {
+    this.listaVisible = !this.listaVisible; // Cambia el valor entre true y false
+  }
+
 }
 
-export class AppModule {}
+export class AppModule { }

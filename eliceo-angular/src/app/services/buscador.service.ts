@@ -5,10 +5,15 @@ import { Injectable } from '@angular/core';
 })
 export class ComponentSearchService {
   private nombreComponentes: string[] = [
-    'home',
-    'clima',
-    'peliculas',
-    'nasa',
+    'Clima',
+    'Peliculas',
+    'Nasa',
+    'GitHub',
+    'Adivinanza',
+    'Filtros',
+    'Window Methods',
+    'Listado de notas',
+    'Añadir nota',
   ];
 
   obtenerComponentesFiltrados(searchTerm: string): string[] {

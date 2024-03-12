@@ -2,6 +2,7 @@
   display: block;
   grid-area: header;
   position: sticky;
+  z-index: 999;
   top: 0;
 }
 
@@ -16,17 +17,147 @@ div a img:hover {
 
 @keyframes agrandar-rotar {
   0% {
-    transform: scale(1) rotate(0deg); /* Tamaño original, sin rotación */
+    transform: scale(1); /* Tamaño original, sin rotación */
   }
-  50% {
-    transform: scale(1.2) rotate(180deg); /* Agrandar al 120% y rotar 180 grados */
+  20% {
+    transform: scale(1.3); /* Agrandar al 120% y rotar 180 grados */
+  }
+  40% {
+    transform: scale(1); /* Volver al tamaño original y rotar 360 grados */
+  }
+  80% {
+    transform: scale(1.3); /* Agrandar al 120% y rotar 180 grados */
   }
   100% {
-    transform: scale(1) rotate(360deg); /* Volver al tamaño original y rotar 360 grados */
+    transform: scale(1); /* Volver al tamaño original y rotar 360 grados */
   }
 }
 
+nav {
+  backdrop-filter: invert(32%);
+  transition: 1s;
+}
 
-li {
-  color: white;
+
+.navbar-nav {
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 30%;
+}
+
+
+.collapse li, .collapse #buscador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+
+.search-bar ul {
+  position:absolute;
+  top: 65%;
+  backdrop-filter: invert(32%);
+  background-color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-bar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+
+.search-bar ul a {
+  position: relative;
+  text-decoration: none;
+  border: 1px solid whitesmoke;
+  color: black;
+  padding: 0.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 199px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+}
+
+
+.search-bar input:focus {
+  outline: 2px solid whitesmoke !important;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  transition: 0.08s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 20%;
+}
+
+button:active {
+  transform: scale(1.1) translateY(5px);
+  background-color:#56bccc;
+
+}
+
+#buscador {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content:flex-start;
+}
+#buscador ul a{
+  transition: 0.2s;
+}
+#buscador ul a:hover {
+  transform: scale(1.2);
+  color: #4A8891;
+  text-decoration: underline;
+  text-decoration-color: #63ddf0;
+  text-decoration-thickness: 4px;
+}
+#buscador input {
+  width: 200px;
+}
+
+#menu-hamburguesa {
+  background: transparent;
+}
+
+/* Para quitar el box-shadow al hacer click */
+#menu-hamburguesa:focus {
+  box-shadow: 0 0 0 0.25rem rgb(0 0 0 / 0%);
+}
+
+
+.navbar-nav li {
+  transition: 0.2s;
+}
+.navbar-nav li:hover {
+  transform: scale(1.2);
+  color: #4A8891;
+  text-decoration: underline;
+  text-decoration-color: #63ddf0;
+  text-decoration-thickness: 4px;
+  
 }

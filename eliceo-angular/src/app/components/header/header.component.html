@@ -1,53 +1,63 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark" data-bs-theme="dark">
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" routerLink="../pages/home"><img src="../../../assets/icono.png" alt="" width="60"></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+    <a class="navbar-brand" routerLink="../pages/home"><img src="../../../assets/icono.png" alt="" width="60">
+    </a>
+    <button id="menu-hamburguesa"class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" routerLink="/adivinanza">Adivinanza</a>
+          <a class="nav-link text-dark" routerLink="/window-methods">WindowMethods</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/filtros">Filtros</a>
+          <a class="nav-link text-dark" aria-current="page" routerLink="/adivinanza">Adivinanza</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/window-methods">WindowMethods</a>
+          <a class="nav-link text-dark" routerLink="/filtros">Filtros</a>
         </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown"
+        <li class="nav-item text-dark dropdown">
+          <a class="nav-link text-dark dropdown-toggle" routerLink="" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Notas
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a class="dropdown-item" routerLink="/tutorials">Listado</a>
+              <a class="dropdown-item" routerLink="/Listado de notas">Listado</a>
             </li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/add-tutorial">Añadir nueva</a>
+              <a class="dropdown-item" routerLink="/Añadir nota">Añadir nueva</a>
             </li>
           </ul>
         </li>
 
       </ul>
+      <div id="buscador">
+        <div class="search-bar">
+          <input id="miInput" class="form-control border border-secondary" type="text" [(ngModel)]="searchTerm"
+            placeholder="Buscar componentes" (input)="search()" />
 
-      <div class="search-bar">
-        <input class="form-control" type="text" [(ngModel)]="searchTerm" placeholder="Buscar componentes"
-          (input)="search()" />
+          @if (componentesFiltrados.length < 2 && listaVisible) { <ul>
+            @for (nombreComponente of componentesFiltrados; track nombreComponente) {
+            <a routerLink="{{ nombreComponente }}">
+              <li (click)="borrarContenidoInput()">{{ nombreComponente }}</li>
+            </a>
+            }
+            </ul>
+            }
+        </div>
+        <button (click)="aparecerLista()" style="margin-left: 10px;">
+          <svg xmlns="http://www.w3.org/2000/svg" hegiht="16" width="16"
+            viewBox="0 0 320 512">
+            <path
+              d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+          </svg>
+        </button>
       </div>
-      @if (componentesFiltrados.length < 2) { <ul>
-        @for (nombreComponente of componentesFiltrados; track nombreComponente) {
-        <a routerLink="{{ nombreComponente }}">
-          <li>{{ nombreComponente }}</li>
-        </a>
-        }
-        </ul>
-        }
     </div>
   </div>
 </nav>

@@ -1,22 +1,20 @@
-<div class="container text-white">
-  <h1 class="text-white">Buscador de películas</h1>
-  <input type="text" [(ngModel)]="busquedaInput" placeholder="Ingrese el título de la película">
-  <button (click)="buscarPeliculas()">Buscar</button>
-  @if (peliculas.length === 0) {
-    <div>
-      <p>No se encontraron resultados para tu búsqueda.</p>
-    </div>
-  }
-  @if (busquedaInput !== '') {
-    <div>
-      @for (movie of peliculas; track movie) {
-        <div class="movie">
-          <img [src]="movie.posterPath" alt="Poster">
-          <h2>{{ movie.title }}</h2>
-          <p>{{ movie.releaseDate }}</p>
-          <p>{{ movie.overview }}</p>
-        </div>
-      }
-    </div>
+<h1 class="text-white">Buscador de películas</h1>
+<input type="text" [(ngModel)]="busquedaInput" placeholder="Ingrese el título de la película">
+<button (click)="buscarPeliculas()">Buscar</button>
+@if (peliculas.length === 0) {
+<div>
+  <p>No se encontraron resultados para tu búsqueda.</p>
+</div>
+}
+@if (busquedaInput !== '') {
+<div>
+  @for (movie of peliculas; track movie) {
+  <div class="movie">
+    <img [src]="movie.posterPath" alt="Poster">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.releaseDate }}</p>
+    <p>{{ movie.overview }}</p>
+  </div>
   }
 </div>
+}

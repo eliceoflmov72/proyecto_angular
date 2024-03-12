@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { GithubService } from '../../services/github.service';
-import { inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 import { FormsModule } from '@angular/forms';
 
 
@@ -10,7 +9,7 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   templateUrl: './github.component.html',
   styleUrls: ['./github.component.css'],
-  imports: [CommonModule, FormsModule]
+  imports: [FormsModule]
 })
   
 export class githubComponent {
