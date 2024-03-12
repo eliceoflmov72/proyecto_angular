@@ -16,17 +16,21 @@ import { FormsModule } from '@angular/forms';
 ],
 })
 export class TutorialsListComponent {
+  // Notas: atributo para guardar las notas, current para la nota actual, currentIndex para el índice de la nota actual, title para el titulo a buscar
   tutorials?: Tutorial[];
   currentTutorial: Tutorial = {};
   currentIndex = -1;
   title = '';
 
+  // Inyección de dependencia del servicio
   constructor(private tutorialService: TutorialService) {}
 
+  // Se ejecuta al cargar el componente, obtiene todas las notas
   ngOnInit(): void {
     this.retrieveTutorials();
   }
 
+  // Obtiene todas las notas
   retrieveTutorials(): void {
     this.tutorialService.getAll().subscribe({
       next: (data) => {
@@ -37,17 +41,20 @@ export class TutorialsListComponent {
     });
   }
 
+  // Actualiza la lista de notas
   refreshList(): void {
     this.retrieveTutorials();
     this.currentTutorial = {};
     this.currentIndex = -1;
   }
 
+  // Configura la nota actual y su índice
   setActiveTutorial(tutorial: Tutorial, index: number): void {
     this.currentTutorial = tutorial;
     this.currentIndex = index;
   }
 
+  // Elimina todas las notas
   removeAllTutorials(): void {
     this.tutorialService.deleteAll().subscribe({
       next: (res) => {
@@ -58,6 +65,7 @@ export class TutorialsListComponent {
     });
   }
 
+  // Busca una nota por su título
   searchTitle(): void {
     this.currentTutorial = {};
     this.currentIndex = -1;
@@ -70,4 +78,5 @@ export class TutorialsListComponent {
       error: (e) => console.error(e)
     });
   }
+
 }

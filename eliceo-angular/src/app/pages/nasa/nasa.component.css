@@ -1,0 +1,54 @@
+:host {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 3em;
+    width: 60%;
+    margin-bottom: 8%;
+
+
+}
+p {
+    text-align: flex-start !important;
+}
+h1 {
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    animation: aparecer 1s ease-out;
+    color: #7878f1 !important;
+    text-shadow: 0 0 20px #4d4dce, 0 0 40px #4d4dce;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+img {
+    opacity: 0;
+    width: 90%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 15px;
+    animation: aparecer 1s 1s ease-out forwards;
+}
+
+p {
+    opacity: 0;
+    animation: aparecer 1s 2s ease-out forwards;
+}

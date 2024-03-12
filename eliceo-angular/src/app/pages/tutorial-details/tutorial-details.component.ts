@@ -16,83 +16,83 @@ import { FormsModule } from '@angular/forms';
 ],
 })
 export class TutorialDetailsComponent {
-  @Input() viewMode = false;
+  @Input() viewMode = false; // Modo de visualización de la nota (solo lectura)
 
-  @Input() currentTutorial: Tutorial = {
+  @Input() currentTutorial: Tutorial = { // Nota que se está mostrando
     title: '',
     description: '',
     published: false
   };
 
-  message = '';
+  message = ''; // Mensaje de confirmación o de error
 
   constructor(
-    private tutorialService: TutorialService,
-    private route: ActivatedRoute,
-    private router: Router
+    private tutorialService: TutorialService, // Servicio para gestión de notas
+    private route: ActivatedRoute, // Para obtener el id de la nota en la url
+    private router: Router // Para redirigir después de eliminar o actualizar
   ) {}
 
-  ngOnInit(): void {
-    if (!this.viewMode) {
-      this.message = '';
-      this.getTutorial(this.route.snapshot.params['id']);
+  ngOnInit(): void { // Al inicializar el componente
+    if (!this.viewMode) { // Si no estamos en modo solo lectura
+      this.message = ''; // Reinicia el mensaje de confirmación/error
+      this.getTutorial(this.route.snapshot.params['id']); // Obtiene la nota con el id de la url
     }
   }
 
-  getTutorial(id: string): void {
-    this.tutorialService.get(id).subscribe({
+  getTutorial(id: string): void { // Obtiene una nota de acuerdo al id
+    this.tutorialService.get(id).subscribe({ // Utiliza el servicio
       next: (data) => {
-        this.currentTutorial = data;
-        console.log(data);
+        this.currentTutorial = data; // Guarda la nota en currentTutorial
+        console.log(data); // Imprime la nota en consola
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e) // Imprime el error en consola
     });
   }
 
-  updatePublished(status: boolean): void {
-    const data = {
+  updatePublished(status: boolean): void { // Actualiza el estado de publicación de una nota
+    const data = { // Datos a enviar al servidor
       title: this.currentTutorial.title,
       description: this.currentTutorial.description,
       published: status
     };
 
-    this.message = '';
+    this.message = ''; // Reinicia el mensaje de confirmación/error
 
-    this.tutorialService.update(this.currentTutorial.id, data).subscribe({
+    this.tutorialService.update(this.currentTutorial.id, data).subscribe({ // Utiliza el servicio
       next: (res) => {
-        console.log(res);
-        this.currentTutorial.published = status;
-        this.message = res.message
+        console.log(res); // Imprime el resultado en consola
+        this.currentTutorial.published = status; // Actualiza el estado en currentTutorial
+        this.message = res.message // Guarda el mensaje en message
           ? res.message
-          : 'The status was updated successfully!';
+          : 'La nota ha sido actualizada.'; // Mensaje por defecto
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e) // Imprime el error en consola
     });
   }
 
-  updateTutorial(): void {
-    this.message = '';
+  updateTutorial(): void { // Actualiza una nota
+    this.message = ''; // Reinicia el mensaje de confirmación/error
 
-    this.tutorialService
+    this.tutorialService // Utiliza el servicio
       .update(this.currentTutorial.id, this.currentTutorial)
       .subscribe({
         next: (res) => {
-          console.log(res);
-          this.message = res.message
+          console.log(res); // Imprime el resultado en consola
+          this.message = res.message // Guarda el mensaje en message
             ? res.message
-            : 'This tutorial was updated successfully!';
+            : 'Esta nota ha sido actualizada.'; // Mensaje por defecto
         },
-        error: (e) => console.error(e)
+        error: (e) => console.error(e) // Imprime el error en consola
       });
   }
 
-  deleteTutorial(): void {
-    this.tutorialService.delete(this.currentTutorial.id).subscribe({
+  deleteTutorial(): void { // Elimina una nota
+    this.tutorialService.delete(this.currentTutorial.id).subscribe({ // Utiliza el servicio
       next: (res) => {
-        console.log(res);
-        this.router.navigate(['/tutorials']);
+        console.log(res); // Imprime el resultado en consola
+        this.router.navigate(['/tutorials']); // Redirige a la lista de notas
       },
-      error: (e) => console.error(e)
+      error: (e) => console.error(e) // Imprime el error en consola
     });
   }
 }

@@ -99,3 +99,9 @@ a:hover {
   text-decoration-color: #63ddf0 !important;   
   text-decoration-thickness: 2px !important;
 }
+
+@media (max-width: 992px) {
+  button {
+    margin-bottom: 1em;
+  }
+}

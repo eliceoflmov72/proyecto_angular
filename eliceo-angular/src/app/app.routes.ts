@@ -1,4 +1,6 @@
 import { Routes } from '@angular/router';
+
+// Importamos los componentes que hemos creado.
 import { ClimaComponent } from './pages/clima/clima.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PeliculasComponent } from './pages/peliculas/peliculas.component';
@@ -13,12 +15,11 @@ import { TutorialsListComponent } from './pages/tutorials-list/tutorials-list.co
 
 export const routes: Routes = [
 
-    // Cambiamos el router component por el home component
-    {path: '', component:HomeComponent},
+    // Cambiamos el path por el que queramos para la ruta principal de cada componente.
+    {path: '', component:HomeComponent, title: 'Inicio'},
     {path: 'Adivinanza', component:AdivinanzaComponent, title: 'Adivina el número'},
     {path: 'Filtros', component:FiltrosComponent, title: 'Filtros de imágenes'},
     {path: 'Window Methods', component:WindowMethodsComponent, title: 'Window Methods'},
-    {path: '', component:HomeComponent, title:'Inicio' },
     {path: 'Clima', component:ClimaComponent, title:'API Clima' },
     {path: 'Peliculas', component:PeliculasComponent, title: 'API Peliculas' },
     {path: 'Nasa', component:NasaComponent, title: 'API Nasa' },

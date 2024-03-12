@@ -1,0 +1,67 @@
+:host {
+    display: block;
+}
+
+.container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin-top: 3em;
+    width: 60%;
+    margin-bottom: 8%;
+}
+p {
+    text-align: flex-start !important;
+}
+h1 {
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    animation: aparecer .8s ease-out;
+    color: #aaddf8 !important;
+    text-shadow: 0 0 20px #5bd2df, 0 0 40px #346d76;
+    text-align: center;
+}
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+
+
+p {
+    opacity: 0;
+    animation: aparecer .8s .8s ease-out forwards;
+    color: #98e1ea !important;
+}
+
+img {
+    opacity: 0;
+    animation: aparecer 1s 1s ease-out forwards;
+}
+
+.col-md-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    p {
+        font-size: 1em;
+    }
+}

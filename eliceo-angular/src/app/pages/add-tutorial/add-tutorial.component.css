@@ -1,0 +1,82 @@
+:host {
+    font-size: 1.3em;
+
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  
+  button {
+    color: black !important;
+    width: 100px;
+    height: 3em;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 1em;
+    border: 0;
+    transition: 0.3s;
+    justify-self: center;
+  }
+  
+  button:hover {
+    scale: 1.1;
+    cursor: pointer;
+  }
+  
+  button:nth-child(3):hover {
+    background-color: rgb(157, 243, 182) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 2px rgba(255, 255, 255, 1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 4em;
+    margin-top: 1em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    animation: aparecer 1s ease-out;
+    color: #6acad9 !important;
+    text-shadow: 0 0 40px #6acad9;
+  }
+  
+  @keyframes aparecer {
+    0% {
+      opacity: 0;
+      transform: translateY(-100px);
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  input {
+    margin-bottom: 2em;
+    border: 0;
+    font-size: 1.2em;
+    width: 35%;
+    height: 2em;
+    text-align: center;
+    border-radius: 4px;
+    background-color: rgb(227, 227, 227);
+    transition: 1s;
+  }
+  .submit-form {
+    justify-self: center;
+    align-self: center;
+    width: 100%;
+  }
+
+  .submit-form div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  

@@ -1,4 +1,5 @@
-<div>
+<div class="container">
+  <h1>Anadir una nota</h1>
   <div class="submit-form">
     @if (!submitted) {
       <div>
@@ -23,14 +24,14 @@
               name="description"
               placeholder="Introduce una descripción."/>
             </div>
-            <button (click)="saveTutorial()" class="btn btn-success">Submit</button>
+            <button (click)="saveTutorial()" class="btn btn-success">Enviar</button>
           </div>
         }
 
         @if (submitted) {
           <div>
-            <h4>Tutorial was submitted successfully!</h4>
-            <button class="btn btn-success" (click)="newTutorial()">Add</button>
+            <h4>¡La nota ha sido añadida con éxito!</h4>
+            <button class="btn btn-success" (click)="newTutorial()">Ok</button>
           </div>
         }
       </div>

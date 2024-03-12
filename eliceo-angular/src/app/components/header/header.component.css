@@ -198,6 +198,7 @@ button:hover {
   }
 }
 
+
 @media (max-width: 992px) {
   .search-bar ul {
     border-radius: 15px;
@@ -209,6 +210,14 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  nav{
+    animation: none;
+  }
+  
+  .navbar-brand, #buscador {
+    animation: none;
   }
 }
 

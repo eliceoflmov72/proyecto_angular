@@ -12,20 +12,20 @@ export class WindowMethodsComponent {
   // Window Methods --------------------------------------------------------
   newWindow: Window | null = null; // Declare the newWindow variable with type Window or null
 
-  openNewWindow() {
+  openNewWindow():void {
     this.newWindow = window.open(" ", "", "width=500, height=400, left=50, top=300");
     // Primer parámetro es vacío para crear una pestaña vacía
     // Segundo parámetro también es vacío
     // Tercero: ancho, alto y posición relativa
   }
 
-  closeWindow() {
+  closeWindow():void {
     if (this.newWindow) {
       this.newWindow.close();
     }
   }
 
-  moveWindowTo() {
+  moveWindowTo():void {
     if (this.newWindow) {
       this.newWindow.focus(); // Para que aparezca delante la ventana
       this.newWindow.moveTo(500, 600); // Para moverla
@@ -33,21 +33,21 @@ export class WindowMethodsComponent {
     }
   }
 
-  resizeWindow() {
+  resizeWindow():void {
     if (this.newWindow) {
       this.newWindow.focus();
       this.newWindow.resizeTo(1000, 500); // Cambiar el tamaño de la ventana
     }
   }
 
-  scrollWindowBy() {
+  scrollWindowBy():void {
     if (this.newWindow) {
       this.newWindow.focus();
       this.newWindow.scrollBy(0, 100); // Primer parámetro <- ->, Segundo parámetro arriba abajo
     }
   }
 
-  printPage() {
+  printPage():void {
     if (this.newWindow) {
       this.newWindow.focus();
       this.newWindow.print();
@@ -56,50 +56,50 @@ export class WindowMethodsComponent {
 
   // TAREA -> Terminar los métodos que quedan
 
-  blurWindow() {
+  blurWindow():void {
     if (this.newWindow) {
       this.newWindow.blur();
     }
   }
 
-  confirmWindow() {
+  confirmWindow():void {
     if (this.newWindow) {
       this.newWindow.confirm();
     }
   }
 
-  moveByWindow() {
+  moveByWindow():void {
     if (this.newWindow) {
       this.newWindow.moveBy(100, 100);
     }
   }
 
-  resizeByWindow() {
+  resizeByWindow():void {
     if (this.newWindow) {
       this.newWindow.resizeBy(100, 100);
     }
   }
 
-  scrollToWindow() {
+  scrollToWindow():void {
     if (this.newWindow) {
       this.newWindow.scrollTo(0, this.newWindow.document.body.scrollHeight);
       // Lo bajará abajo del todo por ser muy grande el número
     }
   }
 
-  stopWindow() {
+  stopWindow():void {
     if (this.newWindow) {
       this.newWindow.stop();
     }
   }
 
-  alertWindow() {
+  alertWindow():void {
     if (this.newWindow) {
       this.newWindow.alert();
     }
   }
 
-  promptWindow() {
+  promptWindow():void {
     if (this.newWindow) {
       this.newWindow.prompt();
     }
