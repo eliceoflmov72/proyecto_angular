@@ -22,7 +22,7 @@ export class ClimaComponent  {
    * Función que se llama al hacer click en el botón de buscar
    * Invoca al servicio de clima y se suscribe a la respuesta
    */
-  buscarCiudad() {
+  buscarCiudad(): void {
     this._climaService.buscarClima(this.ciudad).subscribe(
       // Cuando se reciben los datos se llamada a la función para procesarlos
       (data) => {
